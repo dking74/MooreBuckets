@@ -1,0 +1,31 @@
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+p {
+    font-family: 'Lato';
+    font-size: 1.25rem;
+    color: #3d3d3d
+}
+
+.navbar {
+    box-shadow: 0 2px 3px #DDDDDD;
+}
+
+.cta {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+#gradient-backdrop {
+    /* background: linear-gradient(135deg, hsla(249, 94%, 47%, 1) 0%, hsla(274, 84%, 45%, 1) 33%, hsla(318, 76%, 43%, 1) 64%, hsla(1, 94%, 55%, 1) 100%); */
+    /* Rectangle 3 */
+
+    /* transform: translate(); */
+}
+
+.full-width {
+    width: 100%;
+}

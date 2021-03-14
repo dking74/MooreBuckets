@@ -1,0 +1,9 @@
+$navbar-light-color: rgba(black, .75);
+$navbar-brand-height: 3rem;
+$navbar-brand-padding-y: 0;
+
+$primary: #2907E9;
+
+// Then import Bootstrap an BootstrapVue SCSS files (order is important)
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+@import 'node_modules/bootstrap-vue/src/index.scss';
