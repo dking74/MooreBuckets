@@ -2,8 +2,10 @@
   <div id="app">
     <NavBar />
     <Hero />
-    <Bios />
-    <GradientBackdrop />
+    <GradientBackdrop>
+      <Bios />
+    </GradientBackdrop>
+    <Footer />
   </div>
 </template>
 
@@ -12,6 +14,7 @@ import NavBar from './components/NavBar.vue';
 import Hero from './components/Hero.vue';
 import Bios from './components/Bios/Bios.vue';
 import GradientBackdrop from './components/GradientBackdrop.vue';
+import Footer from './components/Footer.vue';
 import './main.css';
 
 export default {
@@ -20,11 +23,8 @@ export default {
     NavBar,
     Hero,
     Bios,
-    GradientBackdrop
-  },
-  data() {
-    return {
-    }
+    GradientBackdrop,
+    Footer,
   },
 }
 </script>

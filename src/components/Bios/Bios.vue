@@ -1,5 +1,6 @@
 <template>
   <b-container fluid='sm' class="bio-container w-75">
+    <h2 class="bio-container--header">Learn From The Best</h2>
     <BiosContainer
       header="Mark Moore"
       imageFile="/Mark-Moore-Image.jpg"
@@ -33,5 +34,16 @@ export default {
 <style>
 .bio-container {
   margin: 50px;
+}
+
+.bio-container--header {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  align-items: center;
+
+  color: #FFFFFF;
 }
 </style>

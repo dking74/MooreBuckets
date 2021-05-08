@@ -1,24 +1,27 @@
 <template>
   <b-card class="bios-container">
-    <b-row>
+    <b-row class="mb-3">
       <b-col class="bios-header">{{ header }}</b-col>
+      <b-col v-if="!isLargerThanLarge" class="bios-image--column">
+        <b-img rounded="circle" :src="imageFile" :width="imageWidth"></b-img>
+      </b-col>
     </b-row>
     <b-row cols="8">
       <template v-if="imageOrder === 'start'">
-        <b-col cols="3">
-          <b-img rounded="circle" :src="imageFile" width="150px"></b-img>
+        <b-col lg="3" v-if="isLargerThanLarge" class="bios-image--column">
+          <b-img rounded="circle" :src="imageFile" :width="imageWidth"></b-img>
         </b-col>
-        <b-col cols="9">
+        <b-col cols="12" lg="9">
           <p class="bio-text">{{ description }}</p>
         </b-col>
       </template>
 
       <template v-else>
-        <b-col cols="9">
+        <b-col cols="12" lg="9">
           <p class="bio-text">{{ description }}</p>
         </b-col>
-        <b-col cols="3">
-          <b-img rounded="circle" :src="imageFile" width="150px"></b-img>
+        <b-col lg="3" v-if="isLargerThanLarge" class="bios-image--column">
+          <b-img rounded="circle" :src="imageFile" :width="imageWidth"></b-img>
         </b-col>
       </template>
     </b-row>
@@ -26,23 +29,24 @@
 </template>
 
 <script>
+import WindowMixin from '../../mixins/window.mixin';
+
 export default {
   name: 'BiosContainer',
   props: ['header', 'description', 'imageFile', 'imageOrder'],
   computed: {
     baseUrl() {
       return window.location.host;
-    }
+    },
+    imageWidth() {
+      return this.isLargerThanLarge ? '150px' : '75px';
+    },
   },
-  methods: {
-    isLargeScreen() {
-      return window.innerHeight > 1023;
-    }
-  }
+  mixins: [WindowMixin]
 }
 </script>
 
-<style>
+<style lang="scss">
 .bios-container {
   margin-bottom: 20px;
 }
@@ -53,5 +57,8 @@ export default {
 }
 .bio-text {
   font-size: 14px;
+}
+.bios-image--column {
+  text-align: right;
 }
 </style>
