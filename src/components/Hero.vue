@@ -2,19 +2,19 @@
   <b-card class='w-75 mx-auto my-3 px-4 py-3 mb-hero-card'>
     <b-row>
       <b-col cols="12" lg="6">
-        <b-card-body class='mb-hero-card--body'>
-          <div class="md-hero-card--content">
-            <div class="md-hero-card--content__text">
-              <h1 class='mb-3'>Level Up Your Game</h1>
-              <b-card-text v-if="isLargerThanMedium" class='mb-3'>
+        <b-card-body class='mb-hero-card--body p-0'>
+          <div class="md-hero-card--content w-100 h-100 p-3">
+            <div class="md-hero-card--content__text mb-5">
+              <h2 class='mb-3'>Level Up Your Game</h2>
+              <b-card-text v-if="isLargerThanSmall"  style="font-size: 16px">
                 Our goal is to help athletes learn new aspects of the game, both mental and physical,
                 while focusing on improving every session and having fun.
               </b-card-text>
             </div>
-            <b-button variant='primary' class="px-5 py-3 cta">Shoot Your Shot</b-button>
+            <b-button variant='primary' class="px-3 py-2" href="contact-form">Shoot Your Shot</b-button>
           </div>
           <template v-if="!isLargerThanLarge">
-            <img src="/Hero-Image.png" class='hero-image' />
+            <img src="/img/Hero-Image.png" class='hero-image' />
           </template>
         </b-card-body>
       </b-col>
@@ -53,10 +53,21 @@ export default {
   .card-body.mb-hero-card--body {
     padding-top: 0;
     padding-bottom: 0;
+    min-height: 250px;
+    height: 100%;
   }
+
   .md-hero-card--content {
+    background-color: rgba(0, 0, 0, .25);
     .md-hero-card--content__text {
-      background-color: rgba(0, 0, 0, .25);
+      h2 {
+        width: 75%;
+      }
+    }
+
+    button {
+      position: relative;
+      bottom: 15px;
     }
     
     *, .card-text {
@@ -66,7 +77,7 @@ export default {
     z-index: 100;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 576px) {
   .hero-image {
     position: absolute;
     top: 0;
@@ -75,6 +86,12 @@ export default {
     width: 100%;
     height: 100%;
     background: transparent;
+  }
+
+  .md-hero-card--content {
+    button {
+      width: 100%;
+    }
   }
 }
 </style>

@@ -1,24 +1,39 @@
 <template>
-  <div>
-    <div class='mb-gradient-container'>
-    <!-- <slot /> -->
-    <!-- <svg transform='translate(-100px, 0px)' viewBox="0 0 2536 2096" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path class='full-width' d="M148.207 194.846L2375.29 58.9229L2375.29 1901.83L148.207 1901.83L148.207 194.846Z" fill="url(#paint0_linear)"/>
-        <defs>
-            <linearGradient id="paint0_linear" x1="2209.32" y1="1608.58" x2="95.931" y2="755.252" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#FF0000"/>
-                <stop offset="1" stop-color="#001AFF"/>
-            </linearGradient>
-        </defs>
-    </svg> -->
-    </div>
+  <div v-bind="$attrs" style="height: 100%; width: 100%">
+    <div class='mb-gradient-container py-3' :style="styleBindings"></div>
     <slot />
   </div>
 </template>
 
 <script>
 export default {
-    name: 'GradientBackdrop'
+  name: 'mb-gradient-backdrop',
+  props: {
+    rotation: {
+      type: String,
+      required: false,
+      default: '-5deg'
+    },
+    position: {
+      type: String,
+      required: false,
+      default: 'top',
+      validator: (value) => value === 'top' || value === 'bottom'
+    }
+  },
+  computed: {
+    styleBindings() {
+      return {
+        '--rotation': this.rotation,
+        ...this.positionCss
+      };
+    },
+    positionCss() {
+      return this.position === 'top'
+        ? { '--position-top': '50px', '--position-bottom': 'auto' }
+        : { '--position-top': 'auto', '--position-bottom': '50px' }
+    }
+  }
 }
 </script>
 
@@ -29,10 +44,12 @@ div {
 }
 .mb-gradient-container {
   position: absolute;
-  height: 100%;
-  width: 100%;
-  border-radius: 0px;
-  background: linear-gradient(59.73deg, rgba(204, 0, 0, 0.71) -0.87%, rgba(0, 41, 255, 0.67) 67.7%);
-  transform: rotate(-3deg);
+  height: 50%;
+  width: 125%;
+  left: -25px;
+  top: var(--position-top, 50px);
+  bottom: var(--position-bottom, 50px);
+  transform: rotate(var(--rotation, -5deg));
+  background: linear-gradient(60deg, rgba(204, 0, 0, 0.71) -0.87%, rgba(0, 41, 255, 0.67) 67.7%);
 }
 </style>

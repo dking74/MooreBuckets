@@ -1,16 +1,16 @@
 <template>
-  <b-container fluid='sm' class="bio-container w-75">
+  <b-container fluid='sm' class="bio-container w-75" v-bind="$attrs">
     <h2 class="bio-container--header">Learn From The Best</h2>
     <BiosContainer
       header="Mark Moore"
-      imageFile="/Mark-Moore-Image.jpg"
+      imageFile="/img/Mark-Moore-Image.jpg"
       description="Mark has been training various athletes for almost a year, and recently just finished a successful high school basketball career. He is also signed to play four years of basketball at Webster University. He has learned from some of the best coaches and
         trainers in the St. Louis Area, and he is eager to pass on his knowledge."
       imageOrder="last"
     ></BiosContainer>
     <BiosContainer
       header="Matt Moore"
-      imageFile="/Matt-Moore-Image.jpg"
+      imageFile="/img/Matt-Moore-Image.jpg"
       description="Matt is currently an assistant coach for the St. Louis Community College women’s basketball team. This winter will be his first in St. Louis. He spent the previous 3 seasons at Westminster College in Fulton, MO. During his 3 seasons there, the Lady Blue
         Jays had a record of 46-32 with 2 SLIAC tournament berths. They also finished top-3 in the nation in rebounding 2 of those seasons. While serving as the position coach for the guards, he mentored 5 All-Conference Players, 1
         All-Region player, and 1 All-American. He also saw great improvement in 3-point % (27.2 to 33.7) and turnovers (18-16.2) in his 3 years. Prior to his years at Westminster, Matt spent time at Southeast Missouri State, where
