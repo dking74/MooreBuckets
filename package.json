@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "start": "http-server-spa ./dist"
+    "start": "http-server-spa ./dist index.html $PORT"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
