@@ -3,15 +3,15 @@
     <b-row class="mb-3">
       <b-col class="bios-header">{{ header }}</b-col>
       <b-col v-if="!isLargerThanLarge" class="bios-image--column">
-        <b-img rounded="circle" :src="imageFile" :width="imageWidth"></b-img>
+        <b-img rounded="circle" :src="imageFile" :width="imageWidth" style="height: 100px; width: 100px"></b-img>
       </b-col>
     </b-row>
     <b-row cols="8">
       <template v-if="imageOrder === 'start'">
-        <b-col lg="3" v-if="isLargerThanLarge" class="bios-image--column">
+        <b-col lg="3" v-if="isLargerThanLarge" class="bios-image--column text-center">
           <b-img rounded="circle" :src="imageFile" :width="imageWidth"></b-img>
         </b-col>
-        <b-col cols="12" lg="9">
+        <b-col cols="12" lg="9" class='text-left'>
           <p class="bio-text">{{ description }}</p>
         </b-col>
       </template>

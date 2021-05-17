@@ -11,7 +11,7 @@
                 while focusing on improving every session and having fun.
               </b-card-text>
             </div>
-            <b-button variant='primary' class="px-3 py-2" href="contact-form">Shoot Your Shot</b-button>
+            <b-button variant='primary' class="px-3 py-2" href="#contact-form">Shoot Your Shot</b-button>
           </div>
           <template v-if="!isLargerThanLarge">
             <img src="/img/Hero-Image.png" class='hero-image' />
@@ -19,7 +19,7 @@
         </b-card-body>
       </b-col>
       <b-col lg="6" v-if="isLargerThanLarge">
-        <img src="/Hero-Image.png" class='hero-image' />
+        <img src="/img/Hero-Image.png" class='hero-image' />
       </b-col>
     </b-row>
   </b-card>

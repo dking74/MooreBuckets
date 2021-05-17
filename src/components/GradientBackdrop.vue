@@ -14,6 +14,11 @@ export default {
       required: false,
       default: '-5deg'
     },
+    height: {
+      type: String,
+      required: false,
+      default: '50%'
+    },
     position: {
       type: String,
       required: false,
@@ -25,6 +30,7 @@ export default {
     styleBindings() {
       return {
         '--rotation': this.rotation,
+        '--height': this.height,
         ...this.positionCss
       };
     },
@@ -39,12 +45,12 @@ export default {
 
 <style lang="scss">
 div {
-    overflow: hidden;
-    position: relative;
+  overflow: hidden;
+  position: relative;
 }
 .mb-gradient-container {
   position: absolute;
-  height: 50%;
+  height: var(--height, 50%);
   width: 125%;
   left: -25px;
   top: var(--position-top, 50px);
