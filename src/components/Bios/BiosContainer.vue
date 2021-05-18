@@ -58,7 +58,7 @@ export default {
 .bio-text {
   font-size: 14px;
 }
-.bios-image--column {
-  text-align: right;
+.bios-image--column img {
+  max-height: 200px;
 }
 </style>
