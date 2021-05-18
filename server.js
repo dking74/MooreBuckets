@@ -18,11 +18,11 @@ app.post('/api/v1/email', async (req, res) => {
       from: `Automated Training Request <${process.env.MAILGUN_SMTP_LOGIN}>`,
       to: process.env.EMAIL_RECIPIENT,
       html: `
-        <h1>A New Training Inquiry Has Come In!</h1><br><br>
-        <h4>Name: ${name}</h4><br>
-        <h4>Phone Number: ${phone}</h4><br>
-        <h4>Email: ${email}</h4><br>
-        <h4>Age Group: ${ageGroup}</h4><br>
+        <h1>A New Training Inquiry Has Come In!</h1><br>
+        <h4>Name: ${name}</h4>
+        <h4>Phone Number: ${phone}</h4>
+        <h4>Email: ${email}</h4>
+        <h4>Age Group: ${ageGroup}</h4>
   
         Please reach out to them soon!`
     })
