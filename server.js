@@ -3,7 +3,7 @@ const express = require('express');
 const axios = require('axios').default;
 
 const app = express();
-app.use(express.static(`${__dirname}/dist`));
+app.use(express.static(`${__dirname}`));
 app.use(express.json());
 
 app.post('/api/v1/email', async (req, res) => {
