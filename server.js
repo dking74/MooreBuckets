@@ -36,6 +36,32 @@ app.post('/api/v1/email', async (req, res) => {
     });
 });
 
+app.get('/api/v1/testimonials', async (req, res) => {
+  const requestUrl = `${process.env.ELEGANT_CMS_URL}?filter[type]=Testimonial`;
+  axios.get(requestUrl, {
+    headers: {
+     'Authorization': `Token token=${process.env.ELEGANT_CMS_TOKEN}` 
+    }
+  }).then(response => {
+    res.status(200).json(response.data.data);
+  }).catch(error => {
+    res.status(500).json(`Unable to get testimonials: ${error}`);
+  });
+});
+
+app.get('/api/v1/bios', async (req, res) => {
+  const requestUrl = `${process.env.ELEGANT_CMS_URL}?filter[type]=Bio`;
+  axios.get(requestUrl, {
+    headers: {
+     'Authorization': `Token token=${process.env.ELEGANT_CMS_TOKEN}` 
+    }
+  }).then(response => {
+    res.status(200).json(response.data.data);
+  }).catch(error => {
+    res.status(500).json(`Unable to get bios: ${error}`);
+  });
+});
+
 const PORT = process.env.PORT || 8080;
 const server = app.listen(PORT, () => {
   const port = server.address().port;

@@ -28,33 +28,17 @@
 
 <script>
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+
 import WindowMixin from '../mixins/window.mixin';
+import { getTestimonials } from '../utils/actions';
 
 export default {
   name: 'eb-player-testimonials',
+  async mounted() {
+    this.testimonials = await getTestimonials();
+  },
   data: () => ({
-    testimonials: [
-      {
-        text: 'The Moore Brothers were two of most intelligent players we’ve had in our program. Their basketball IQ and attention to detail helped us win a bunch of games and multiple championships. They continue to help our program through their detailed and relevant player development. Any player or program can benefit from Moore Buckets.',
-        reviewer: 'Dan Johnson',
-        role: 'Former Coach',
-        additionalDetails: [
-          '200+ wins',
-          '7x Conference Champion',
-          '4x District Champion'
-        ]
-      },
-      {
-        text: 'Training with Moore Buckets has been nothing less that amazing. Both Mark and Matt have challenged me to step out of my comfort zone and push my limits as a player. Their attention to detail and passion for the game is what I love most. They’re great trainers but more importantly they’re genuinely kind people who truly care about you.  I would highly recommend all athletes to train with Moore Buckets if you are serious about taking your game to the next level.',
-        reviewer: 'Josh Johnson',
-        role: 'Former Player at Webster University',
-        additionalDetails: [
-          '1255 Career Points',
-          '2x First Team All Conference',
-          'SLIAC Player of the Year'
-        ]
-      }
-    ],
+    testimonials: [],
     accountIcon: faUser,
   }),
   computed: {
