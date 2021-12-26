@@ -94,7 +94,7 @@ export default {
   methods: {
     async sendEmail() {
       if (!this.submitDisabled) {
-        return await sendEmail(this.form)
+        return (await sendEmail(this.form)
           .then(() => {
             this.emailSent = true;
             setTimeout(() => {
@@ -102,7 +102,7 @@ export default {
               this.emailSent = false;
               window.location.href = '';
             }, 5000);
-          });
+          }));
       }
     }
   },
