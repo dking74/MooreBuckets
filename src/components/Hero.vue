@@ -63,7 +63,7 @@ export default {
 .hero-image-container {
   grid-area: hero-image-container;
   width: 100%;
-  background-image: url(/img/Matt-Mark-Hero.f53b5213.png);
+  background-image: url(/img/Matt-Mark-Hero.png);
   background-position: top;
   background-size: cover;
   aspect-ratio: 4/5;
@@ -83,6 +83,10 @@ export default {
     .hero-text {
       margin-top: 0 !important;
     }
+  }
+
+  .hero-image-container {
+    display: block;
   }
 }
 
