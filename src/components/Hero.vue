@@ -1,105 +1,101 @@
 <template>
-  <b-card class='w-75 mx-auto my-3 px-4 py-3 mb-hero-card'>
-    <b-row>
-      <b-col cols="12" lg="6">
-        <b-card-body class='mb-hero-card--body p-0'>
-          <div class="md-hero-card--content w-100 h-100 p-3">
-            <div class="md-hero-card--content__text mb-3">
-              <h2 class='mb-3'>Level Up Your Game</h2>
-              <b-card-text v-if="isLargerThanSmall" style="font-size: 16px">
-                Our goal is to help athletes learn new aspects of the game, both mental and physical,
-                while focusing on improving every session and having fun.
-              </b-card-text>
+  <div>
+    <div class="hero-grid mx-auto">
+      <div class="hero-text">
+        <div class="p-0">
+          <div class="px-3">
+            <div class="mb-3">
+              <h2 class="mb-4">Level Up Your Game</h2>
+              <div class="mb-4" v-if="isLargerThanSmall">
+                Our goal is to help athletes learn new aspects of the game, both
+                mental and physical, while focusing on improving every session
+                and having fun.
+              </div>
 
-              <b-card-text v-if="isLargerThanSmall" style="font-size: 16px">
-                What are you waiting for? Get started today to shoot your best shot!
-              </b-card-text>
+              <div v-if="isLargerThanSmall">
+                What are you waiting for? Get started today to shoot your best
+                shot!
+              </div>
             </div>
-            <b-button variant='primary' class="px-3 py-2" href="#contact-form">Shoot Your Shot</b-button>
+            <b-button variant="primary" class="mt-4" href="#contact-form"
+              >Shoot Your Shot</b-button
+            >
 
-            <b-card-text style="font-size: 12px; font-style: italic" class="mt-5">* Proudly serving the Saint Louis, MO area</b-card-text>
+            <div style="font-size: 12px; font-style: italic" class="mt-5">
+              * Proudly serving the Saint Louis, MO area
+            </div>
           </div>
-          <template v-if="!isLargerThanLarge">
-            <img src="/img/Matt-Mark-Hero.png" class='hero-image' />
-          </template>
-        </b-card-body>
-      </b-col>
-      <b-col lg="6" v-if="isLargerThanLarge" class="text-center">
-        <img src="/img/Matt-Mark-Hero.png" class='hero-image' />
-      </b-col>
-    </b-row>
-  </b-card>
+        </div>
+      </div>
+      <div class="hero-image-container">
+        <!-- <img src="/img/Matt-Mark-Hero.png" class="hero-image" /> -->
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import WindowMixin from '../mixins/window.mixin';
+import WindowMixin from "../mixins/window.mixin";
 
 export default {
-  name: 'mb-hero-banner',
-  mixins: [WindowMixin]
-}
+  name: "mb-hero-banner",
+  mixins: [WindowMixin],
+};
 </script>
 
 <style lang="scss">
 .mb-hero-card.card {
-  box-shadow: 0px 0px 3px rgba(0, 0, 255, .25);
+  box-shadow: 0px 0px 3px rgba(0, 0, 255, 0.25);
 }
-.hero-image {
-  max-height: 350px;
+
+.hero-grid {
+  width: 75%;
+  display: grid;
+  grid-template-areas: "hero-text hero-image-container";
+  grid-template-columns: 2fr 1fr;
+  margin-top: 5rem;
 }
-@media screen and (max-width: 992px) {
-  .hero-image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 5;
-    width: 50%;
-    height: 100%;
-    background: transparent;
-  }
 
-  .card-body.mb-hero-card--body {
-    padding-top: 0;
-    padding-bottom: 0;
-    min-height: 250px;
-    height: 100%;
-  }
+.hero-text {
+  grid-area: hero-text;
+}
 
-  .md-hero-card--content {
-    background-color: rgba(0, 0, 0, .25);
-    .md-hero-card--content__text {
-      h2 {
-        width: 75%;
-      }
-    }
+.hero-image-container {
+  grid-area: hero-image-container;
+  width: 100%;
+  background-image: url(/img/Matt-Mark-Hero.f53b5213.png);
+  background-position: top;
+  background-size: cover;
+  aspect-ratio: 4/5;
+}
 
-    button {
-      position: relative;
-      bottom: 15px;
-    }
-    
-    *, .card-text {
-      background: transparent;
-      color: white;
-    }
-    z-index: 100;
+@media screen and (max-width: 1226px) {
+  .hero-grid {
+    width: 85%;
+    grid-template-columns: 3fr 2fr;
   }
 }
-@media screen and (max-width: 576px) {
-  .hero-image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 5;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-  }
 
-  .md-hero-card--content {
-    button {
-      width: 100%;
+@media screen and (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+
+    .hero-text {
+      margin-top: 0 !important;
     }
+  }
+}
+
+@media screen and (max-width: 685px) {
+  .hero-grid {
+    width: 95%;
+    grid-template-areas:
+      "hero-text"
+      "hero-image-container";
+    grid-template-columns: 1fr;
+  }
+  .hero-image-container {
+    display: none;
   }
 }
 </style>

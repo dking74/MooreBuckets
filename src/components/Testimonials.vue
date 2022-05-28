@@ -28,14 +28,14 @@
 
 <script>
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { testimonials } from '../utils/data';
 
 import WindowMixin from '../mixins/window.mixin';
-import { getTestimonials } from '../utils/actions';
 
 export default {
   name: 'eb-player-testimonials',
   async mounted() {
-    this.testimonials = await getTestimonials();
+    this.testimonials = testimonials;
   },
   data: () => ({
     testimonials: [],

@@ -1,31 +1,51 @@
+:root {
+  --bucket-blue: #546fff;
+}
+
+h1,
+h2 {
+  font-family: "Raleway", sans-serif;
+}
+
 h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
+  font-weight: 600;
+}
+
+h2 {
+  font-weight: 800 !important;
+  font-size: 3rem !important;
 }
 
 p {
-    font-family: 'Lato';
-    font-size: 1.25rem;
-    color: #3d3d3d
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.25rem;
+  color: #3d3d3d;
 }
 
 .navbar {
-    box-shadow: 0 2px 3px #DDDDDD;
-}
-
-.cta {
-    font-family: 'Montserrat', sans-serif !important;
-    font-size: 1.5rem;
-    font-weight: 300;
+  box-shadow: 0 2px 3px #dddddd;
 }
 
 #gradient-backdrop {
-    /* background: linear-gradient(135deg, hsla(249, 94%, 47%, 1) 0%, hsla(274, 84%, 45%, 1) 33%, hsla(318, 76%, 43%, 1) 64%, hsla(1, 94%, 55%, 1) 100%); */
-    /* Rectangle 3 */
+  /* background: linear-gradient(135deg, hsla(249, 94%, 47%, 1) 0%, hsla(274, 84%, 45%, 1) 33%, hsla(318, 76%, 43%, 1) 64%, hsla(1, 94%, 55%, 1) 100%); */
+  /* Rectangle 3 */
 
-    /* transform: translate(); */
+  /* transform: translate(); */
+}
+
+.btn.btn-primary {
+  background-color: var(--bucket-blue) !important;
+}
+
+.btn {
+  font-family: "Raleway", sans-serif;
+  font-weight: 800 !important;
+  font-size: 1.25rem !important;
+  border-radius: 0 !important;
+  border: none !important;
+  padding: 0.75rem 2rem !important;
 }
 
 .full-width {
-    width: 100%;
+  width: 100%;
 }

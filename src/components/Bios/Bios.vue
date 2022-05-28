@@ -12,12 +12,12 @@
 
 <script>
 import BiosContainer from './BiosContainer.vue';
-import { getBios } from '../../utils/actions';
+import { bios } from '../../utils/data';
 
 export default {
   name: 'Bios',
   async mounted() {
-    this.bios = await getBios();
+    this.bios = bios;
   },
   data: () => ({
     bios: []
