@@ -1,5 +1,10 @@
 :root {
-  --bucket-blue: #546fff;
+  --bucket-blue: #677ef8;
+}
+
+body {
+  background-color: var(--background-color-primary) !important;
+  color: var(--text-primary-color) !important;
 }
 
 h1,
@@ -16,14 +21,31 @@ h2 {
   font-size: 3rem !important;
 }
 
-p {
+p,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.25rem;
-  color: #3d3d3d;
+  color: var(--text-primary-color) !important;
 }
 
 .navbar {
-  box-shadow: 0 2px 3px #dddddd;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+  color: var(--text-primary-color) !important;
+  background-color: var(--background-color-secondary) !important;
+  box-shadow: 0 2px 3px var(--background-color-primary);
+}
+
+.nav-link {
+  color: var(--text-primary-color) !important;
+}
+
+.card-body {
+  background-color: var(--background-color-secondary) !important;
+  color: var(--text-primary-color) !important;
 }
 
 #gradient-backdrop {
@@ -48,4 +70,26 @@ p {
 
 .full-width {
   width: 100%;
+}
+
+.responsive-card {
+  width: 95%;
+}
+
+@media screen and (min-width: 568px) {
+  .card-body {
+    padding: 2rem 2.5rem !important;
+  }
+  .responsive-card {
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .card-body {
+    padding: 3rem 5rem !important;
+  }
+  .responsive-card {
+    width: 50%;
+  }
 }

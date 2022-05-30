@@ -1,31 +1,34 @@
 <template>
-  <b-container fluid='sm' class="bio-container w-75" v-bind="$attrs">
+  <b-container fluid="sm" class="bio-container responsive-card" v-bind="$attrs">
     <h2 class="bio-container--header section-header">Learn From The Best</h2>
-    <BiosContainer v-for="(bio, index) in bios" :key="bio.header"
+    <BiosContainer
+      v-for="(bio, index) in bios"
+      :key="bio.header"
       :header="bio.header"
       :imageFile="bio.imageFile"
       :description="bio.description"
+      :shortDescription="bio.shortDescription"
       :imageOrder="index % 2 === 0 ? 'last' : 'start'"
     ></BiosContainer>
   </b-container>
 </template>
 
 <script>
-import BiosContainer from './BiosContainer.vue';
-import { bios } from '../../utils/data';
+import BiosContainer from "./BiosContainer.vue";
+import { bios } from "../../utils/data";
 
 export default {
-  name: 'Bios',
+  name: "Bios",
   async mounted() {
     this.bios = bios;
   },
   data: () => ({
-    bios: []
+    bios: [],
   }),
   components: {
     BiosContainer,
-  }
-}
+  },
+};
 </script>
 
 <style>
@@ -34,6 +37,12 @@ export default {
 }
 
 .bio-container--header {
-  color: #FFFFFF;
+  color: var(--text-primary-color);
+}
+
+.bios-header {
+  font-family: "Raleway", sans-serif !important;
+  font-weight: 800 !important;
+  margin-bottom: 1rem;
 }
 </style>

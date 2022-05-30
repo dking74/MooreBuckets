@@ -2,10 +2,10 @@
   <div id="app">
     <NavBar />
     <Hero />
-    <GradientBackdrop class="pt-5" rotation="-3deg">
+    <GradientBackdrop class="py-5" rotation="-3deg" height="50%">
       <Bios />
     </GradientBackdrop>
-    <GradientBackdrop class="mb-5 pt-5" rotation="-178deg" height="75%">
+    <GradientBackdrop class="mb-5 pt-5" rotation="-178deg" height="50%">
       <Testimonials />
     </GradientBackdrop>
     <GradientBackdrop class="mb-5" rotation="-3deg" height="75%">
@@ -41,12 +41,8 @@ export default {
 
 <style lang="scss">
 .card {
-  border: none;
-  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.25);
-
-  .card-body {
-    overflow-y: scroll;
-  }
+  border: none !important;
+  box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.15);
 }
 
 .section-header {
@@ -64,16 +60,16 @@ export default {
 }
 .facebook {
   @extend .social-media-icon;
-  color: #3b5998;
+  color: var(--text-primary-color);
 }
 .instagram {
   @extend .social-media-icon;
-  color: #125688;
+  color: var(--text-primary-color);
   border-radius: 50%;
   aspect-ratio: 1/1 !important;
 }
 .twitter {
   @extend .social-media-icon;
-  color: #55acee;
+  color: var(--text-primary-color);
 }
 </style>

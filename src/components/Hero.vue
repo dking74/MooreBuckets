@@ -6,13 +6,13 @@
           <div class="px-3">
             <div class="mb-3">
               <h2 class="mb-4">Level Up Your Game</h2>
-              <div class="mb-4" v-if="isLargerThanSmall">
+              <div class="mb-4">
                 Our goal is to help athletes learn new aspects of the game, both
                 mental and physical, while focusing on improving every session
                 and having fun.
               </div>
 
-              <div v-if="isLargerThanSmall">
+              <div>
                 What are you waiting for? Get started today to shoot your best
                 shot!
               </div>
@@ -27,9 +27,7 @@
           </div>
         </div>
       </div>
-      <div class="hero-image-container">
-        <!-- <img src="/img/Matt-Mark-Hero.png" class="hero-image" /> -->
-      </div>
+      <div class="hero-image-container" />
     </div>
   </div>
 </template>
@@ -44,9 +42,6 @@ export default {
 </script>
 
 <style lang="scss">
-.mb-hero-card.card {
-  box-shadow: 0px 0px 3px rgba(0, 0, 255, 0.25);
-}
 
 .hero-grid {
   width: 75%;

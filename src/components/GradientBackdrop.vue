@@ -2,7 +2,7 @@
   <div
     v-bind="$attrs"
     style="height: 100%; width: 100%"
-    class="gradient-background"
+    class="gradient-background" 
   >
     <div class="mb-gradient-container py-3" :style="styleBindings"></div>
     <slot />
